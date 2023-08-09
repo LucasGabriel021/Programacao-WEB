@@ -6,7 +6,7 @@ function verificarNumeroPrimo(valor) {
     return console.log("Resposta = 1");
   } else {
     for (let count = 1; count <= valor; count++) {
-      if (valor % count === 0) {
+      if ((valor % count) === 0) {
         qtdDiv++;
         if (qtdDiv > 2) {
           // 0 - se o número não for primo;
