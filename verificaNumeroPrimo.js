@@ -1,17 +1,27 @@
+// Função
 function verificarNumeroPrimo(valor) {
-    //1 - se o número for primo;
-    let valorProvisorio = 1;
-    for(let i = 2; i <= valor; i++) {
-        if((valor % i) == 0) {
-            //0 - se o número não for primo;
-            valorProvisorio = 0;
-        } 
+  let qtdDiv = 0;
+  if (valor === 1) {
+    // 1 - se o número for primo;
+    return console.log("Resposta = 1");
+  } else {
+    for (let count = 1; count <= valor; count++) {
+      if (valor % count === 0) {
+        qtdDiv++;
+        if (qtdDiv > 2) {
+          // 0 - se o número não for primo;
+          console.log("Resposta = 0");
+          break;
+        }
+      }
     }
+  }
 
-    if(valorProvisorio == 0) {
-        console.log("O número não é primo, resultado:", valorProvisorio);
-    } else {
-        console.log("O número é primo, resultado:", valorProvisorio);
-    }
+  if (qtdDiv <= 2) {
+    //1 - se o número for primo.
+    console.log("Resposta = 1");
+  }
 }
-verificarNumeroPrimo(7);
+
+// Execução da função
+verificarNumeroPrimo(33);
