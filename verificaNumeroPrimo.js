@@ -1,3 +1,4 @@
+// Função
 function verificarNumeroPrimo(valor) {
   let qtdDiv = 0;
   if (valor < 0) {
