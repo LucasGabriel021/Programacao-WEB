@@ -1,18 +1,36 @@
 // Faça um algoritmo que imprime uma matriz A e sua transposta.
 
-let matriz = [[1, 2], [3, 4], [5, 6]];
+// Definição da matriz
+const matrizA = [[1, 2], [3, 4], [5, 6]];
+console.log("Matriz A: ");
+imprimirMatriz(matrizA);
 
-let matrizNormal = `
-        |${matriz[0][0]} ${matriz[0][1]}|
-        |${matriz[1][0]} ${matriz[1][1]}|
-        |${matriz[2][0]} ${matriz[2][1]}|
-`;
+function imprimirMatriz(matriz) {
+    // console.log(matriz.length);
+    // console.log(matriz);
+    for(let i = 0; i < matriz.length; i++) {
+        console.log(matriz[i].join("\t")); // join transforma um array em string
+    }
+}
 
-console.log(matrizNormal);
+function traspostaMatriz(matriz) {
+    const rows = matriz[0].length;
+    const cols = matriz.length;
+    const matrizTransposta = [];
+    // console.log("Linhas: ", rows);
+    // console.log("Colunas: ", cols);
 
-let matrizTransposta = `
-    |${matriz[0][0]} ${matriz[1][0]} ${matriz[2][0]}|
-    |${matriz[0][1]} ${matriz[1][1]} ${matriz[2][1]}|
-`;
+    for(let i = 0; i < rows; i++) {
+        const newRow = [];
+        for(let j = 0; j < cols; j++) {
+            newRow.push(matriz[j][i]);
+        }
+        matrizTransposta.push(newRow);
+    }
+    
+    return matrizTransposta;
+}
 
-console.log(matrizTransposta);
+const matrizTranspostaReal = traspostaMatriz(matrizA);
+console.log("\n Matriz Trasnposta A: ");
+imprimirMatriz(matrizTranspostaReal);
