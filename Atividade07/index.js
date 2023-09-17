@@ -3,6 +3,7 @@ const mustacheExpress = require("mustache-express");
 const app = express();
 const PORT = 8080;
 
+// Renderizar HTML com o Mustache
 app.engine("html", mustacheExpress());
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
@@ -11,7 +12,7 @@ app.use(express. urlencoded());
 
 app.get("/formulario", (req, res) => {
     res.render("index.html");
-    
+
 });
 
 const dados = []
