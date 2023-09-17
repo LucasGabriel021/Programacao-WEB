@@ -14,13 +14,13 @@
 <body>
     <div class="container p-4">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12">
                 <h1>Olá usuário, preencha o formulário abaixo</h1>
                 <hr>
                 <form action="/precessar_dados" method="post">
                     <div class="mb-3 mt-3">
                         <label for="nome" class="form-label">Nome:</label>
-                        <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
+                        <input type="text" class="form-control" id="nome" placeholder="Nome completo" name="nome">
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="endereco" class="form-label">Endereço:</label>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="telefone" class="form-label">Telefone:</label>
-                        <input type="text" class="form-control" id="telefone" placeholder="Telefone" name="telefone">
+                        <input type="text" class="form-control" id="telefone" placeholder="(61) 9999-9999" name="telefone">
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="dataAgendamento" class="form-label">Data de agendamento:</label>
@@ -36,9 +36,6 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
-            </div>
-            <div class="col-6">
-                ...
             </div>
         </div>
     </div>

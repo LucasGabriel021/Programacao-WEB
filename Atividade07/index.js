@@ -11,15 +11,34 @@ app.use(express. urlencoded());
 
 app.get("/formulario", (req, res) => {
     res.render("index.html");
+    
 });
 
+const dados = []
+
 app.post("/precessar_dados", (req, res) => {
-    const {nome, email, telefone, dataAgendamento} = req.body;
-    
+    const {nome, endereco, telefone, dataAgendamento} = req.body;
+    // console.log(nome, endereco, telefone, dataAgendamento);
 
-    res.render("dados.html");
+    console.log(dataAgendamento);
+    function formatarData(data) {
+        const partesData = data.split("-");
+        if(partesData.length === 3) {
+            // const {ano, mes, dia} = partesData;
+            const ano = partesData[0];
+            const mes = partesData[1];
+            const dia = partesData[2];
+            return `${dia}/${mes}/${ano}`;
+        }
+        return data;
+    }
 
-    console.log(nome);
+    const dataBr = formatarData(dataAgendamento);
+
+    dados.push({ nome, endereco, telefone, dataBr });
+    console.log(dados);
+
+    res.render("dados.html", {dados});
 });
 
 app.listen(PORT, () => {
