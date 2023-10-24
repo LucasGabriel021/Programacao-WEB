@@ -3,7 +3,7 @@ const router = express.Router();
 
 const calculadoraController = require("../controller/calculadoraController");
 
-router.get("/", calculadoraController.indexCalculadora);
+router.get("/calculadora", calculadoraController.indexCalculadora);
 router.post("/calcular", calculadoraController.calcular);
 
 module.exports = router;
